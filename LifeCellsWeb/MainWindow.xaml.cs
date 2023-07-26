@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
+using LifeCellsWeb.Controller;
 
 namespace LifeCellsWeb
 {
@@ -32,6 +33,7 @@ namespace LifeCellsWeb
 			string path = System.IO.Path.Combine(Environment.CurrentDirectory, "Interface", "index.html");
 
 			Web.CoreWebView2.Navigate(path);
+			Web.CoreWebView2.AddHostObjectToScript("apiwebcontroller", new ApiWebController(Web));
 		}
 	}
 }
