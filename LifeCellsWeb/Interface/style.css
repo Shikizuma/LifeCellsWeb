@@ -1,1 +1,59 @@
-﻿
+﻿.cell {
+    height: 100px;
+    width: 100px;
+    background: #008080;
+    position: absolute;
+    transition: 0.2s;
+    border-radius: 50px;
+}
+
+.cell:hover {
+    background: #ff0000;
+    border-radius: 30px;
+}
+
+.cell-info {
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .7);
+    z-index: 100;
+}
+
+.cell-info__inner {
+    background: #fff;
+    padding: 15px;
+    margin: auto;
+    width: 500px;
+    max-width: 100%;
+}
+
+.cell-grid {
+    width: 100%;
+    border: 0;
+}
+
+.cell-grid__label,
+.cell-grid__value {
+    padding: 5px 10px;
+    vertical-align: top;
+}
+
+.cell-grid__label {
+    width: 40%;
+    text-align: right;
+    font-weight: bold;
+    color: #8D99AE;
+}
+
+.cell-grid__value {
+    width: 60%;
+}
+
+.cell-grid__row:nth-child(2n) .cell-grid__label,
+.cell-grid__row:nth-child(2n) .cell-grid__value {
+    background: #eee;
+}
