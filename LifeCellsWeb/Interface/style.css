@@ -2,9 +2,9 @@
     height: 100px;
     width: 100px;
     background: #008080;
-    position: absolute;
-    transition: 0.2s;
+    transition: 0.5s;
     border-radius: 50px;
+    position: absolute;
 }
 
 .cell:hover {
@@ -56,4 +56,13 @@
 .cell-grid__row:nth-child(2n) .cell-grid__label,
 .cell-grid__row:nth-child(2n) .cell-grid__value {
     background: #eee;
+}
+
+.modal-footer {
+    padding: 15px 0 0;
+
+}
+
+.btn--min {
+    min-width: 100px;
 }

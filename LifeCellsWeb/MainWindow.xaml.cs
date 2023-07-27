@@ -30,9 +30,10 @@ namespace LifeCellsWeb
 		private async void Window_Loaded(object sender, RoutedEventArgs e)
 		{
 			await Web.EnsureCoreWebView2Async(null);
+			Web.CoreWebView2.Settings.IsWebMessageEnabled = true;
 			string path = System.IO.Path.Combine(Environment.CurrentDirectory, "Interface", "index.html");
-
 			Web.CoreWebView2.Navigate(path);
+
 			Web.CoreWebView2.AddHostObjectToScript("apiwebcontroller", new ApiWebController(Web));
 		}
 	}

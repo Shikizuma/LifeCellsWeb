@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace LifeCellsWeb.Controller
@@ -14,11 +15,19 @@ namespace LifeCellsWeb.Controller
 		{
 			this.webView = webView;
 		}
-
-		public async void Test()
+		
+		Random random = new Random();
+		public void GetPosition()
 		{
-			//webView.CoreWebView2.PostWebMessageAsJson("123");
-			await webView.CoreWebView2.ExecuteScriptAsync("alert(321)");
+			var message = new
+			{
+				left = random.Next(0, 700) + "px",
+				top = random.Next(0, 700) + "px",
+			};
+
+			var json = JsonSerializer.Serialize(message);
+
+			webView.CoreWebView2.PostWebMessageAsJson(json);
 		}
 	}
 }
