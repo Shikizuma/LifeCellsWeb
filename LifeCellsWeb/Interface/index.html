@@ -10,8 +10,6 @@
 </head>
 <body>
     <div id="app">
-
-
         <div v-if="currentCell" class="cell-info">
 
             <div class="cell-info__inner">
@@ -37,7 +35,24 @@
             </div>
         </div>
 
-        <div class="cell" v-bind:style="coordinates" v-on:click="viewDetails()"> </div>
+        <div class="cell" 
+             v-for="cell in cells"
+             v-bind:style="cell.style" 
+             v-on:click="viewDetails()">
+            <div class="glycolyx">
+                <div class="membrane">
+                    <div class="organelles">
+                        <div class="mitochondrion"
+                             v-for="mitochondrion in cell.mitochondrions"
+                             v-bind:style="mitochondrion.style"></div>
+                        <div class="lysosome"
+                             v-for="mitochondrion in cell.mitochondrions"
+                             v-bind:style="mitochondrion.style"></div>
+                    </div>
+                    <div class="nucleo"></div>
+                </div>
+            </div>
+        </div>
         <p>{{ coordinates }}</p>
     </div>
 

@@ -6,10 +6,10 @@
         xmlns:local="clr-namespace:LifeCellsWeb"
         xmlns:Wpf="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf" x:Class="LifeCellsWeb.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="800" Width="1200" Loaded="Window_Loaded">
+        Title="MainWindow" Height="1000" Width="1500" Loaded="Window_Loaded">
     <Grid>
 
-        <Wpf:WebView2 Height="800" Width="1200" x:Name="Web"/>
+        <Wpf:WebView2 x:Name="Web"/>
 
     </Grid>
 </Window>

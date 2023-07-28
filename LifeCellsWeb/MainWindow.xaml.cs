@@ -35,6 +35,7 @@ namespace LifeCellsWeb
 			Web.CoreWebView2.Navigate(path);
 
 			Web.CoreWebView2.AddHostObjectToScript("apiwebcontroller", new ApiWebController(Web));
+
 		}
 	}
 }
