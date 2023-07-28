@@ -12,9 +12,9 @@
 .cell {
     height: 100px;
     width: 100px;
-    background: #cdffe7;
+    background-color: rgba(196, 247, 233, 0.8);
     transition: 0.5s;
-    border-radius: 50px;
+    border-radius: 45%;
     position: absolute;
 }
 
@@ -28,7 +28,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    border-radius: 50px;
+    border-radius: 45%;
 }
 
 .membrane {
@@ -36,12 +36,11 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    border-radius: 50px;
+    border-radius: 45%;
     display: flex;
 }
 
-.organelles {
-   
+.organelles { 
 }
 
 .nucleo {

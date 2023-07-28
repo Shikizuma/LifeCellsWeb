@@ -10,10 +10,8 @@
 </head>
 <body>
     <div id="app">
-        <div v-if="currentCell" class="cell-info">
-
+        <!--<div v-if="currentCell" class="cell-info">
             <div class="cell-info__inner">
-
                 <table class="cell-grid">
                     <tr class="cell-grid__row">
                         <td class="cell-grid__label">Id:</td>
@@ -33,7 +31,7 @@
                     <button type="button" class="btn btn-primary btn--min" v-on:click="hideDetails()">OK</button>
                 </div>
             </div>
-        </div>
+        </div>-->
 
         <div class="cell" 
              v-for="cell in cells"
@@ -46,14 +44,13 @@
                              v-for="mitochondrion in cell.mitochondrions"
                              v-bind:style="mitochondrion.style"></div>
                         <div class="lysosome"
-                             v-for="mitochondrion in cell.mitochondrions"
-                             v-bind:style="mitochondrion.style"></div>
+                             v-for="lysosome in cell.lysosomes"
+                             v-bind:style="lysosome.style"></div>
                     </div>
                     <div class="nucleo"></div>
                 </div>
             </div>
         </div>
-        <p>{{ coordinates }}</p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>

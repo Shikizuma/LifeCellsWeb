@@ -1,4 +1,6 @@
-﻿using Microsoft.Web.WebView2.Wpf;
+﻿using LifeCellsWeb.Fabrics;
+using LifeCellsWeb.Models;
+using Microsoft.Web.WebView2.Wpf;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,17 +19,15 @@ namespace LifeCellsWeb.Controller
 		}
 		
 		Random random = new Random();
-		public void GetPosition()
+		public void LoadCells()
 		{
-			var message = new
-			{
-				left = random.Next(0, 700) + "px",
-				top = random.Next(0, 700) + "px",
-			};
+			int count = random.Next(1, 10);
 
-			var json = JsonSerializer.Serialize(message);
+			var cells = CellFabric.CreateCells(count);
+
+			var json = JsonSerializer.Serialize(cells);
 
 			webView.CoreWebView2.PostWebMessageAsJson(json);
-		}
+		}	
 	}
 }

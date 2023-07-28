@@ -1,3 +1,4 @@
 ﻿window.chrome.webview.addEventListener('message', event => {
-    app.setPosition(event.data)
+    //console.log(event.data);
+    app.loadCells(event.data);
 });
