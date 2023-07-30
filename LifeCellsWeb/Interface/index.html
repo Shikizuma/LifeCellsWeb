@@ -10,28 +10,29 @@
 </head>
 <body>
     <div id="app">
-        <!--<div v-if="currentCell" class="cell-info">
+        <div v-if="currentCell" 
+             class="cell-info"
+             v-on:click="viewDetails()">
             <div class="cell-info__inner">
                 <table class="cell-grid">
                     <tr class="cell-grid__row">
                         <td class="cell-grid__label">Id:</td>
-                        <td class="cell-grid__value"> {{ currentCell.id }} </td>
+                        <td class="cell-grid__value"> 1 </td>
                     </tr>
                     <tr class="cell-grid__row">
                         <td class="cell-grid__label">Категорія:</td>
-                        <td class="cell-grid__value"> {{ currentCell.category }} </td>
+                        <td class="cell-grid__value"> 1 </td>
                     </tr>
                     <tr class="cell-grid__row">
                         <td class="cell-grid__label">Назва клітинки:</td>
-                        <td class="cell-grid__value"> {{ currentCell.name }} </td>
+                        <td class="cell-grid__value"> 1 </td>
                     </tr>
                 </table>
-
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary btn--min" v-on:click="hideDetails()">OK</button>
                 </div>
             </div>
-        </div>-->
+        </div>
 
         <div class="cell" 
              v-for="cell in cells"

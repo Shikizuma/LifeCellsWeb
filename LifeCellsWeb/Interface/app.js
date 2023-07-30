@@ -3,7 +3,7 @@
 var app = new Vue({
     el: "#app",
     data: {
-      /*  currentCell: null,*/
+        currentCell: null,
         cells: [],
     },
     mounted() {
@@ -12,10 +12,10 @@ var app = new Vue({
     methods: {
         viewDetails() {
           
-          /* this.currentCell = this.cellList[0];*/
+           this.currentCell = 1;
         },
         hideDetails() {
-            /*this.currentCell = null;*/
+            this.currentCell = null;
         },
         loadCells(cells) {
             this.cells = cells;
