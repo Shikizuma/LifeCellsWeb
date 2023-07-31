@@ -27,12 +27,12 @@ namespace LifeCellsWeb.Fabrics
 				Lysosomes = LysosomeFabric.CreateLysosomes(new Random().Next(1,5)),
 			};
 
-			//Type key = typeof(CellModel);
-			//if (Container.ContainsKey(key))
-			//{
-			//	var appendConfiguration = Container[key];
-			//	appendConfiguration(cell);
-			//}
+			Type key = typeof(CellModel);
+			if (Container.ContainsKey(key))
+			{
+				var appendConfiguration = Container[key];
+				appendConfiguration(cell);
+			}
 
 			return cell;
 		}

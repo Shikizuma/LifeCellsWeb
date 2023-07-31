@@ -24,12 +24,12 @@ namespace LifeCellsWeb.Fabrics
 				}
 			};
 
-			//Type key = typeof(MitochondrionModel);
-			//if (Container.ContainsKey(key))
-			//{
-			//	var appendConfiguration = Container[key];
-			//	appendConfiguration(mito);
-			//}
+			Type key = typeof(MitochondrionModel);
+			if (Container.ContainsKey(key))
+			{
+				var appendConfiguration = Container[key];
+				appendConfiguration(mito);
+			}
 
 			return mito;
 		}
