@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using LifeCellsWeb.Controller;
+using LifeCellsWeb.Models;
 
 namespace LifeCellsWeb
 {
@@ -24,6 +25,15 @@ namespace LifeCellsWeb
 	{
 		public MainWindow()
 		{
+
+			Configuration configuration = new Configuration();
+
+			configuration.Configure<CellModel>(cell =>
+			{
+				cell.Life = 1000;
+				cell.Style.X = "10px";
+			});
+
 			InitializeComponent();
 		}
 
@@ -35,7 +45,6 @@ namespace LifeCellsWeb
 			Web.CoreWebView2.Navigate(path);
 
 			Web.CoreWebView2.AddHostObjectToScript("apiwebcontroller", new ApiWebController(Web));
-
 		}
 	}
 }
