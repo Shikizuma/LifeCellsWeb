@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LifeCellsWeb.Models
 {
-	internal class CellModel
+	public class CellModel
 	{
 		[JsonPropertyName("id")]
 		public Guid Id { get; set; }

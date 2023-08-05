@@ -17,8 +17,15 @@ var app = new Vue({
         hideDetails() {
             this.currentCell = null;
         },
-        loadCells(cells) {
+        LoadCells(cells) {
             this.cells = cells;
+            setInterval(() => {
+                let json = JSON.stringify(this.cells);
+                api.UpdateCells(json);
+            }, 1000)
+        },
+        UpdateCells(newCells) {
+            this.cells = newCells;
         },
     },
    

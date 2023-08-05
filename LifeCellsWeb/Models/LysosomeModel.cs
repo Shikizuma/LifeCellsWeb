@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LifeCellsWeb.Models
 {
-	internal class LysosomeModel
+	public class LysosomeModel
 	{
 		[JsonPropertyName("style")]
 		public StyleModel Style { get; set; }
