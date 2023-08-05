@@ -19,10 +19,11 @@ var app = new Vue({
         },
         LoadCells(cells) {
             this.cells = cells;
+
             setInterval(() => {
                 let json = JSON.stringify(this.cells);
                 api.UpdateCells(json);
-            }, 1000)
+            }, 500)
         },
         UpdateCells(newCells) {
             this.cells = newCells;

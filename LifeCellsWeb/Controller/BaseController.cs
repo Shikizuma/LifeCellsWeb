@@ -23,10 +23,10 @@ namespace LifeCellsWeb.Controller
 			var eventModel = new EventControllerModel()
 			{
 				Data = obj,
-				Method = method
+				Method = method,
 			};
 
-			var json = JsonSerializer.Serialize(obj);
+			var json = JsonSerializer.Serialize(eventModel);
 			WebView.CoreWebView2.PostWebMessageAsJson(json);
 		}
 	}
