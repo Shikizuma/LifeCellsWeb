@@ -9,6 +9,8 @@ namespace LifeCellsWeb.Models
 {
 	internal class CellModel
 	{
+		[JsonPropertyName("id")]
+		public Guid Id { get; set; }
 		[JsonPropertyName("life")]
 		public double Life { get; set; }
 		[JsonPropertyName("style")]

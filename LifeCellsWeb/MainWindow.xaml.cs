@@ -28,11 +28,16 @@ namespace LifeCellsWeb
 
 			Configuration configuration = new Configuration();
 
-			configuration.Configure<CellModel>(cell =>
-			{
-				cell.Life = 1000;
-				cell.Style.X = "10px";
-			});
+			//configuration.Configure<CellModel>(cell =>
+			//{
+			//	cell.Life = 1000;
+			//	cell.Style.X = "10px";
+			//});
+
+			//configuration.Configure<MitochondrionModel>(mito =>
+			//{
+			//	mito.Style.X = "10px";
+			//});
 
 			InitializeComponent();
 		}
