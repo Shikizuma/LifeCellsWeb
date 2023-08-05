@@ -23,6 +23,9 @@ namespace LifeCellsWeb
 	/// </summary>
 	public partial class MainWindow : Window
 	{
+
+		Random random = new Random();
+
 		public MainWindow()
 		{
 
@@ -31,6 +34,7 @@ namespace LifeCellsWeb
 			configuration.Configure<CellModel>(cell =>
 			{
 				cell.Id = Guid.NewGuid();
+				cell.Energy = random.Next(20, 200);
 			});
 
 			InitializeComponent();

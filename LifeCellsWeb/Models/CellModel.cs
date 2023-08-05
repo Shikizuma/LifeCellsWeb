@@ -12,7 +12,11 @@ namespace LifeCellsWeb.Models
 		[JsonPropertyName("id")]
 		public Guid Id { get; set; }
 		[JsonPropertyName("life")]
-		public double Life { get; set; }
+		public double Life { get; set; }	
+		[JsonPropertyName("energy")]
+		public double Energy { get; set; }
+		[JsonPropertyName("dna")]
+		public string DNA { get; set; }
 		[JsonPropertyName("style")]
 		public StyleModel Style { get; set; }
 		[JsonPropertyName("mitochondrions")]

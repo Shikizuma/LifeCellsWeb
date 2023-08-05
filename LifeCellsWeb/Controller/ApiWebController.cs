@@ -1,4 +1,5 @@
 ﻿using LifeCellsWeb.Fabrics;
+using LifeCellsWeb.Handlers;
 using LifeCellsWeb.Models;
 using Microsoft.Web.WebView2.Wpf;
 using System;
@@ -13,7 +14,19 @@ namespace LifeCellsWeb.Controller
 {
 	public class ApiWebController : BaseController
 	{
-		public ApiWebController(WebView2 webView) : base(webView) {}
+		Handler cellHandler;
+		public ApiWebController(WebView2 webView) : base(webView) 
+		{
+			DNAHandlerFirst first = new DNAHandlerFirst();
+			DNAHandlerSecond second = new DNAHandlerSecond();
+			DNAHandlerThird third = new DNAHandlerThird();
+
+			first.SetNextHandler(second);
+			second.SetNextHandler(third);
+
+			cellHandler = first;
+
+		}
 		
 		Random random = new Random();
 		public void LoadCells()
@@ -27,16 +40,16 @@ namespace LifeCellsWeb.Controller
 		{
 			List<CellModel> cells = JsonSerializer.Deserialize<List<CellModel>>(json)!;
 
-			Regex regex = new Regex("([0-9]+)px");
-
 			cells.ForEach(cell =>
 			{
-				string px = cell.Style.X;
-				var collection = regex.Match(px);
-				double newPosition = double.Parse(collection.Groups[1].Value);
-				newPosition += 10;
-				cell.Style.X = $"{newPosition}px";
+				StyleModel style = cellHandler.LifeRequest(cell);
+
+				if (style != null)
+					cell.Style = style;
+				
 			});
+
+			//cells.Add(CellFabric.CreateCell());
 
 			Json(cells, "UpdateCells");
 		}
