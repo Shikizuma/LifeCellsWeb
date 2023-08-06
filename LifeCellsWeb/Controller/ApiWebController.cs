@@ -25,7 +25,6 @@ namespace LifeCellsWeb.Controller
 			second.SetNextHandler(third);
 
 			cellHandler = first;
-
 		}
 		
 		Random random = new Random();
@@ -48,8 +47,6 @@ namespace LifeCellsWeb.Controller
 					cell.Style = style;
 				
 			});
-
-			//cells.Add(CellFabric.CreateCell());
 
 			Json(cells, "UpdateCells");
 		}

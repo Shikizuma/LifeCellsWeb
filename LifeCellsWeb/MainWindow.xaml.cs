@@ -28,7 +28,6 @@ namespace LifeCellsWeb
 
 		public MainWindow()
 		{
-
 			Configuration configuration = new Configuration();
 
 			configuration.Configure<CellModel>(cell =>

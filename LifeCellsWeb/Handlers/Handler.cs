@@ -22,7 +22,6 @@ namespace LifeCellsWeb.Handlers
 				return nextHandler.LifeRequest(cell);
 
 			return null;
-			//throw new Exception("Not found DNA");
 		}
 	}
 }
