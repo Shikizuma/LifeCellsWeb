@@ -19,10 +19,12 @@ namespace LifeCellsWeb.Controller
 		{
 			DNAHandlerFirst first = new DNAHandlerFirst();
 			DNAHandlerSecond second = new DNAHandlerSecond();
+			DNACharacteristicsHandler characteristics = new DNACharacteristicsHandler();
 			DNAHandlerThird third = new DNAHandlerThird();
 
 			first.SetNextHandler(second);
-			second.SetNextHandler(third);
+			second.SetNextHandler(characteristics);
+			characteristics.SetNextHandler(third);
 
 			cellHandler = first;
 		}

@@ -13,7 +13,7 @@ namespace LifeCellsWeb.Fabrics
 		static Random random = new Random();
 		public static MitochondrionModel CreateMitochondrion()
 		{
-			int size = 100;
+			int size = 90;
 			var mito =  new MitochondrionModel()
 			{
 				Style = new StyleModel()

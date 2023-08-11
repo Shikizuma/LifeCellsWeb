@@ -13,10 +13,14 @@ namespace LifeCellsWeb.Handlers
 	{
 		public override void LifeRequest(RequestModel request)
 		{
-			if (request.Cell.Energy > 100)
+			if (request.Cell.Energy > request.Cell.DNA[0])
 			{
-			
+				var style = request.Cell.Style;
+				var width = style.Width.GetSize();
+				var height = style.Height.GetSize();
 
+				style.Width = $"{width + 5}px";
+				style.Height = $"{height + 5}px";
 			}
 
 			base.LifeRequest(request);

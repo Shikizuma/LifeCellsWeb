@@ -12,7 +12,7 @@ namespace LifeCellsWeb.Fabrics
 		static Random random = new Random();
 		public static LysosomeModel CreateLysosome()
 		{
-			int size = 100;
+			int size = 90;
 			var lys = new LysosomeModel()
 			{
 				Style = new StyleModel()

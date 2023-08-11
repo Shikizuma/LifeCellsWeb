@@ -35,6 +35,7 @@ namespace LifeCellsWeb
 			{
 				cell.Id = Guid.NewGuid();
 				cell.Energy = random.Next(20, 200);
+				cell.Life = random.Next(20, 150);
 				cell.DNA = HandlerExtension.GenerateDNA(random.Next(10, 30));
 			});
 

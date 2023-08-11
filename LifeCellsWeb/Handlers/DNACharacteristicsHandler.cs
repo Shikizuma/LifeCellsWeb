@@ -3,47 +3,45 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace LifeCellsWeb.Handlers
 {
-	internal class DNAHandlerSecond : Handler
+	internal class DNACharacteristicsHandler : Handler
 	{
-
 		public override void LifeRequest(RequestModel request)
 		{
 			if (request.Cell.DNA[4] == 'T')
 			{
-				request.Cell.Energy += 20;
+				request.Cell.Life += 3;
 			}
 			else if (request.Cell.DNA[4] == 't')
 			{
-				request.Cell.Energy += 10;
+				request.Cell.Life += 1.5;
 			}
 			else if (request.Cell.DNA[4] == 'A')
 			{
-				request.Cell.Energy += 5;
+				request.Cell.Life += 8;
 			}
 			else if (request.Cell.DNA[4] == 'a')
 			{
-				request.Cell.Energy += 2.5;
+				request.Cell.Life += 4;
 			}
 			else if (request.Cell.DNA[4] == 'G')
 			{
-				request.Cell.Energy += 8;
+				request.Cell.Life += 8;
 			}
 			else if (request.Cell.DNA[4] == 'g')
 			{
-				request.Cell.Energy += 4;
+				request.Cell.Life += 4;
 			}
 			else if (request.Cell.DNA[4] == 'C')
 			{
-				request.Cell.Energy += 2;
+				request.Cell.Life += 10;
 			}
 			else if (request.Cell.DNA[4] == 'c')
 			{
-				request.Cell.Energy += 2;
+				request.Cell.Life += 5;
 			}
 
 
