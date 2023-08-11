@@ -12,7 +12,7 @@
     <div id="app">
         <div v-if="currentCell" 
              class="cell-info"
-             v-on:click="viewDetails()">
+             v-on:click="viewDetails(cell)">
             <div class="cell-info__inner">
                 <table class="cell-grid">
                     <tr class="cell-grid__row">
@@ -24,8 +24,8 @@
                         <td class="cell-grid__value"> 1 </td>
                     </tr>
                     <tr class="cell-grid__row">
-                        <td class="cell-grid__label">Назва клітинки:</td>
-                        <td class="cell-grid__value"> 1 </td>
+                        <td class="cell-grid__label">ДНК клітинки:</td>
+                        <td class="cell-grid__value"> {{ currentCell.dna }} </td>
                     </tr>
                 </table>
                 <div class="modal-footer">
@@ -37,7 +37,7 @@
         <div class="cell" 
              v-for="cell in cells"
              v-bind:style="cell.style" 
-             v-on:click="viewDetails()">
+             v-on:click="viewDetails(cell)">
             <div class="glycolyx">
                 <div class="membrane">
                     <div class="organelles">

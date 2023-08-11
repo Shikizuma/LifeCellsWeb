@@ -10,9 +10,8 @@ var app = new Vue({
         api.LoadCells();
     },
     methods: {
-        viewDetails() {
-          
-           this.currentCell = 1;
+        viewDetails(cell) {
+           this.currentCell = cell;
         },
         hideDetails() {
             this.currentCell = null;

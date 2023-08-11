@@ -41,11 +41,12 @@ namespace LifeCellsWeb.Controller
 
 			cells.ForEach(cell =>
 			{
-				StyleModel style = cellHandler.LifeRequest(cell);
-
-				if (style != null)
-					cell.Style = style;
-				
+				var request = new RequestModel()
+				{
+					Cell = cell,
+					Cells = cells.Where(c => c.Id != cell.Id).ToList(),
+				};
+				cellHandler.LifeRequest(request);
 			});
 
 			Json(cells, "UpdateCells");

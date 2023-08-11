@@ -16,12 +16,11 @@ namespace LifeCellsWeb.Handlers
 			nextHandler = handler;
 		}
 
-		public virtual StyleModel LifeRequest(CellModel cell)
+		public virtual void LifeRequest(RequestModel request)
 		{
 			if (nextHandler != null)
-				return nextHandler.LifeRequest(cell);
+				nextHandler.LifeRequest(request);
 
-			return null;
 		}
 	}
 }

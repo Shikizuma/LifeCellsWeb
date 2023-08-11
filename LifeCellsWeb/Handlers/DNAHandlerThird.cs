@@ -1,4 +1,5 @@
-﻿using LifeCellsWeb.Models;
+﻿using LifeCellsWeb.Extensions;
+using LifeCellsWeb.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,25 +11,17 @@ namespace LifeCellsWeb.Handlers
 {
 	internal class DNAHandlerThird : Handler
 	{
-		static Random random = new Random();
-		Regex regex = new Regex("([0-9]+)px");
-
-		public override StyleModel LifeRequest(CellModel cell)
+		public override void LifeRequest(RequestModel request)
 		{
-			if (cell.Energy < 20)
+			if (request.Cell.Life < request.Cell.DNA[5])
 			{
-				string px = cell.Style.Y;
-				var collection = regex.Match(px);
-				double newPosition = double.Parse(collection.Groups[1].Value);
-				newPosition += 10;
-				cell.Style.Y = $"{newPosition}px";
+				double x = request.Cell.Style.X.GetSize();
+				request.Cell.Style.X = $"{x + 10}px";
 
-				cell.Energy -= 10;
-
-				return cell.Style;
+				request.Cell.Energy -= 10;
 			}
 
-			return base.LifeRequest(cell);
+			base.LifeRequest(request);
 		}
 	}
 }
