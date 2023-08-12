@@ -20,7 +20,6 @@ namespace LifeCellsWeb.Handlers
 		{
 			if (nextHandler != null)
 				nextHandler.LifeRequest(request);
-
 		}
 	}
 }

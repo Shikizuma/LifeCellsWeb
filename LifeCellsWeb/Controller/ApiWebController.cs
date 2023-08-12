@@ -37,7 +37,7 @@ namespace LifeCellsWeb.Controller
 			Json(cells, "LoadCells");
 		}	
 
-		public async void UpdateCells(string json)
+		public void UpdateCells(string json)
 		{
 			List<CellModel> cells = JsonSerializer.Deserialize<List<CellModel>>(json)!;
 
