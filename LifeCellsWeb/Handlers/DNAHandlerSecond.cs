@@ -39,11 +39,11 @@ namespace LifeCellsWeb.Handlers
 			}
 			else if (request.Cell.DNA[4] == 'C')
 			{
-				request.Cell.Energy += 2;
+				request.Cell.Energy += 4;
 			}
 			else if (request.Cell.DNA[4] == 'c')
 			{
-				request.Cell.Energy += 2;
+				request.Cell.Energy += 3;
 			}
 
 
